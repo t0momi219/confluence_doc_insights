@@ -1,8 +1,8 @@
 name: Nightly DLT Pipeline
 
 on:
-  schedule:
-    - cron: '0 16 * * *' # Run at midnight UTC every day
+  # schedule:
+  #   - cron: '0 16 * * *' # Run at midnight UTC every day
 
 #   即時実行させたい時はコメントインしてコミットしてください。
 #   push:
