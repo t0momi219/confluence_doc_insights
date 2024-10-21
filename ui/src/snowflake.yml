@@ -1,0 +1,18 @@
+definition_version: 1
+streamlit:
+  name: confluence_doc_insights
+  stage: confluence_doc_insights_stage
+  query_warehouse: T_KODAMA_WH
+  main_file: ui/welcome.py
+  env_file: environment.yml
+  pages_dir: ui/pages/
+  additional_source_files:
+  - ui/__init__.py
+  - ui/models.py
+  - ui/queries.py
+  - ui/utils.py
+  - ui/components/document_review_items.py
+  - ui/components/outdated_page_items.py
+  - ui/components/page_access_history_linechart.py
+  - ui/components/recent_page_items.py
+  - ui/components/sidebar.py

@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: recent_page_activity
+    description: |
+      ### 最近作成されたページの活動
+      最後にロードをした日付から、
+      環境変数 `DBT__REPORT_WINDOW` で指定された日数以内に作成されたページの状態を確認します。
+      （指定されていない場合、デフォルトで14日を閾値にします。）
+
+      ### PK
+      - date
+      - page_id
+    config:
+      materialized: 'incremental'
+      unique_key: 'agg_target_date'
+      incremental_strategy: 'delete+insert'
+    columns:
+      - name: agg_target_date
+        description: |
+          集計対象日。この集計を行った時点での最新dltロード日に一致します。
+      - name: space_id
+      - name: page_id
+      - name: title
+      - name: created_at
+      - name: updated_at
+      - name: path
+      - name: total_views
+        description: |
+          ページが作成されてからの総閲覧回数
+      - name: avg_viewers
+        description: |
+          ページの1日あたりのユニーク閲覧者数の平均
+      - name: activity_category
+        description: |
+          ページの活動状態を示すカテゴリ
+
+          ## カテゴリ
+          - 活発なページ: 最近作られ、ページの来訪者数も多いページです。
+          - 見逃されたページ: 最近作られたにも関わらず、ページへの来訪者数が他よりも少ないページです。
+
+          ### 活発なページ
+          このページの１日あたりのユニーク閲覧者数平均が閾値よりも高い場合、活発なページになります。
+
+          ### 見逃されたページ
+          このページの１日あたりのユニーク閲覧者数平均が閾値よりも低い場合、見逃されたページになります。
+
+          ### 閾値について
+          環境変数 `DBT__UNIQUE_VIEWS_THRESHOLD` で与えられた数値です。
+          与えられなかった場合は、最近作られたページの１日あたりのユニーク閲覧者数の平均が採用されます。

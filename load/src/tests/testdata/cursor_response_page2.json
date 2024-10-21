@@ -1,0 +1,6 @@
+{
+    "page": "2",
+    "_links": {
+        "base": "https://api.example.com/wiki/api/v2/cursor-response"
+    }
+}

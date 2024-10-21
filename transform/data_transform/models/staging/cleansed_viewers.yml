@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: cleansed_viewers
+    description: |
+      Confluence Analyticsのviewers内容を一部加工したテーブル
+
+      ### cf
+      - https://developer.atlassian.com/cloud/confluence/rest/v1/api-group-analytics/#api-wiki-rest-api-analytics-content-contentid-viewers-get
+    columns:
+      - name: page_id
+      - name: date
+      - name: viewers
+      - name: _dlt_load_id
+      - name: _dlt_id

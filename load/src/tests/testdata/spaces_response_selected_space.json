@@ -1,0 +1,22 @@
+{
+    "results": [
+        {
+            "createdAt": "2020-03-02T07:50:24.532Z",
+            "authorId": "abcdefghijklmn",
+            "homepageId": "1234567",
+            "icon": null,
+            "name": "TEST_SPACE_1",
+            "key": "test-space-1",
+            "id": "1111111",
+            "type": "global",
+            "description": null,
+            "status": "current",
+            "_links": {
+                "webui": "/spaces/test-space-1"
+            }
+        }
+    ],
+    "_links": {
+        "base": "https://api.example.com/wiki"
+    }
+}

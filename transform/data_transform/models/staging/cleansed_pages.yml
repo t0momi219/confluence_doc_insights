@@ -1,0 +1,67 @@
+version: 2
+
+models:
+  - name: cleansed_pages
+    description: |
+      Confluence pagesの内容を一部加工したテーブル
+
+      ### cf
+      - https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-page/#api-spaces-id-pages-get
+    columns:
+      - name: page_id
+      - name: status
+        description: |
+          有効な値は以下の通り。
+          - current
+          - draft
+          - archived
+          - historical
+          - trashed
+          - deleted
+          - any
+      - name: title
+      - name: space_id
+      - name: parent_id
+        description: |
+          親がいない場合はNullになります。
+      - name: parent_type
+        description: |
+          有効な値は以下の通り。
+          - page
+          - whiteboard
+          - database
+          - embed
+          親がいない場合はNullになります。
+      - name: position
+        description: |
+          親ページツリー内の子ページの位置です。
+      - name: author_id
+      - name: owner_id
+      - name: last_author_id
+      - name: version
+      - name: created_at
+      - name: updated_at
+      - name: html_contents
+      - name: path
+        description: |
+          スペースのルートからページまでの階層を、区切られたタイトルの列で示した文字列です。
+          たとえば、以下のようなページ構成の場合:
+
+          ```txt
+          root
+          └── page1
+              └── page2
+                  └── page3
+          ```
+
+          page3のパスは、"page1 / page2 / page3"です。
+
+          もしタイトル中にスラッシュが入っていたとしても、エスケープはされません。
+      - name: _dlt_load_id
+      - name: _dlt_id
+      - name: age
+        description: |
+          作成された日から、最終ロード日までの日数
+      - name: days_since_last_updated
+        description: |
+          更新された日から、最終ロード日までの日数

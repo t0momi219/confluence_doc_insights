@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: embedded_pages
+    description: |
+      ### ベクトル化されたページ
+      ページをチャンクごとにベクトル化する。
+
+      ### PK
+      - page_id
+    config:
+      # FIXME:
+      # dbt-snowflake v1.8.3 では、Vector型をincremental modelで使用できない。
+      # https://github.com/dbt-labs/dbt-snowflake/pull/1169
+      # 修正リリースが出たらバージョンを上げてincrementalにしたほうがいい。
+      materialized: 'table' #'incremental'
+      # unique_key: 'page_id'
+      # incremental_strategy: 'delete+insert'
+    columns:
+      - name: page_id
+      - name: chunk
+      - name: embedded_chunk
+      - name: updated_at

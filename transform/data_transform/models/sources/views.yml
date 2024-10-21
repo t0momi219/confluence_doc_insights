@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: confluence
+    database: "{{ env_var('DATABASE') }}"
+    schema: "{{ env_var('SCHEMA') }}"
+    tables:
+      - name: views
+        columns:
+          - name: page_id
+          - name: date
+          - name: views
+          - name: _dlt_load_id
+          - name: _dlt_id

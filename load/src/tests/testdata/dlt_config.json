@@ -1,0 +1,11 @@
+{
+  "sources": {
+    "confluence": {
+      "api_v1_url_relative_path": "wiki/rest/api",
+      "api_v2_url_relative_path": "wiki/api/v2",
+      "target_spaces": ["test_space_id"],
+      "longest_collection_period": 31,
+      "dataset_name": "confluence"
+    }
+  }
+}

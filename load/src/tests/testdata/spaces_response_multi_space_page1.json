@@ -1,0 +1,83 @@
+{
+    "results": [
+        {
+            "createdAt": "2020-03-02T07:50:24.532Z",
+            "authorId": "abcdefghijklmn",
+            "homepageId": "1234567",
+            "icon": null,
+            "name": "TEST_SPACE_1",
+            "key": "test-space-1",
+            "id": "1111111",
+            "type": "global",
+            "description": null,
+            "status": "current",
+            "_links": {
+                "webui": "/spaces/test-space-1"
+            }
+        },
+        {
+            "createdAt": "2020-03-02T07:50:24.532Z",
+            "authorId": "abcdefghijklmn",
+            "homepageId": "1234567",
+            "icon": null,
+            "name": "TEST_SPACE_2",
+            "key": "test-space-2",
+            "id": "2222222",
+            "type": "global",
+            "description": null,
+            "status": "current",
+            "_links": {
+                "webui": "/spaces/test-space-2"
+            }
+        },
+        {
+            "createdAt": "2020-03-02T07:50:24.532Z",
+            "authorId": "abcdefghijklmn",
+            "homepageId": "1234567",
+            "icon": null,
+            "name": "TEST_SPACE_3",
+            "key": "test-space-3",
+            "id": "3333333",
+            "type": "global",
+            "description": null,
+            "status": "current",
+            "_links": {
+                "webui": "/spaces/test-space-3"
+            }
+        },
+        {
+            "createdAt": "2020-03-02T07:50:24.532Z",
+            "authorId": "abcdefghijklmn",
+            "homepageId": "1234567",
+            "icon": null,
+            "name": "TEST_SPACE_4",
+            "key": "test-space-4",
+            "id": "4444444",
+            "type": "global",
+            "description": null,
+            "status": "current",
+            "_links": {
+                "webui": "/spaces/test-space-4"
+            }
+        },
+        {
+            "createdAt": "2020-03-02T07:50:24.532Z",
+            "authorId": "abcdefghijklmn",
+            "homepageId": "1234567",
+            "icon": null,
+            "name": "TEST_SPACE_5",
+            "key": "test-space-5",
+            "id": "5555555",
+            "type": "global",
+            "description": null,
+            "status": "current",
+            "_links": {
+                "webui": "/spaces/test-space-5"
+            }
+        }
+    ],
+    "_links": {
+        "next": "/wiki/api/v2/spaces?cursor=test-cursor-1",
+        "base": "https://api.example.com/wiki"
+    }
+}

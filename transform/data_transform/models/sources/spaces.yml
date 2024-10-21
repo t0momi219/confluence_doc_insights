@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: confluence
+    database: "{{ env_var('DATABASE') }}"
+    schema: "{{ env_var('SCHEMA') }}"
+    tables:
+      - name: spaces
+        columns:
+          - name: CREATED_AT
+          - name: AUTHOR_ID
+          - name: HOMEPAGE_ID
+          - name: NAME
+          - name: KEY
+          - name: ID
+          - name: TYPE
+          - name: STATUS
+          - name: _LINKS__WEBUI
+          - name: _DLT_LOAD_ID
+          - name: _DLT_ID

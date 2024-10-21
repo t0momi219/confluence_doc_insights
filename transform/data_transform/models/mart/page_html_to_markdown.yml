@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: page_html_to_markdown
+    description: |
+      ### ページの内容をマークダウン形式に変換
+
+      ### PK
+      - page_id
+    config:
+      materialized: 'incremental'
+      unique_key: 'page_id'
+      incremental_strategy: 'delete+insert'
+    columns:
+      - name: page_id
+      - name: md_contents
+      - name: chunked_contents

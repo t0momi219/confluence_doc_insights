@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: cleansed_loads
+    description: dltのロード履歴
+    columns:
+      - name: LOAD_ID
+      - name: SCHEMA_NAME
+      - name: STATUS
+      - name: INSERTED_AT
+      - name: SCHEMA_VERSION_HASH

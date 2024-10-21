@@ -1,0 +1,42 @@
+name: Nightly DLT Pipeline
+
+on:
+  schedule:
+    - cron: '0 16 * * *' # Run at midnight UTC every day
+
+#   即時実行させたい時はコメントインしてコミットしてください。
+#   push:
+#     branches:
+#       - main
+
+jobs:
+  run-dlt-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11.6' # Specify the Python version you need
+        cache: 'pip' # caching pip dependencies
+
+    - name: Install dependencies
+      run: |
+        sed '/-e/d' requirements.lock > requirements.txt
+        pip install -r requirements.txt
+
+    - name: Run DLT pipeline
+      run: |
+        python ./src/pipeline.py
+      env:
+        CREDENTIALS__CONFLUENCE_BASE_URL: ${{ secrets.CONFLUENCE_BASE_URL }}
+        CREDENTIALS__CONFLUENCE_USERNAME: ${{ secrets.CONFLUENCE_USERNAME }}
+        CREDENTIALS__CONFLUENCE_API_TOKEN: ${{ secrets.CONFLUENCE_API_TOKEN }}
+        CONFLUENCE__DESTINATION__SNOWFLAKE__CREDENTIALS__DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+        CONFLUENCE__DESTINATION__SNOWFLAKE__CREDENTIALS__USERNAME: ${{ secrets.SNOWFLAKE_USERNAME }}
+        CONFLUENCE__DESTINATION__SNOWFLAKE__CREDENTIALS__HOST: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+        CONFLUENCE__DESTINATION__SNOWFLAKE__CREDENTIALS__PRIVATE_KEY: ${{ secrets.SNOWFLAKE_PRIVATE_KEY }}
+      working-directory: ./load

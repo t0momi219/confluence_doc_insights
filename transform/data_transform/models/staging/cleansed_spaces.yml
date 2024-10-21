@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: cleansed_spaces
+    description: |
+      Confluence spacesの内容を一部加工したテーブル
+
+      ### cf
+      - https://developer.atlassian.com/cloud/confluence/rest/v2/api-group-space/#api-spaces-get
+    columns:
+          - name: SPACE_ID
+          - name: CREATED_AT
+          - name: AUTHOR_ID
+          - name: HOMEPAGE_ID
+          - name: NAME
+          - name: KEY
+          - name: TYPE
+          - name: STATUS
+          - name: _LINKS__WEBUI
+          - name: _DLT_LOAD_ID
+          - name: _DLT_ID
+          - name: INSERTED_AT

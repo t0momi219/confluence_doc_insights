@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: confluence
+    database: "{{ env_var('DATABASE') }}"
+    schema: "{{ env_var('SCHEMA') }}"
+    tables:
+      - name: pages
+        columns:
+          - name: PARENT_TYPE
+          - name: CREATED_AT
+          - name: AUTHOR_ID
+          - name: ID
+          - name: VERSION__NUMBER
+          - name: VERSION__MESSAGE
+          - name: VERSION__MINOR_EDIT
+          - name: VERSION__AUTHOR_ID
+          - name: VERSION__CREATED_AT
+          - name: POSITION
+          - name: TITLE
+          - name: STATUS
+          - name: SPACE_ID
+          - name: BODY__STORAGE__VALUE
+          - name: BODY__STORAGE__REPRESENTATION
+          - name: PARENT_ID
+          - name: OWNER_ID
+          - name: _LINKS__EDITUI
+          - name: _LINKS__WEBUI
+          - name: _LINKS__TINYUI
+          - name: _DLT_LOAD_ID
+          - name: _DLT_ID

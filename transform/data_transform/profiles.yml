@@ -1,0 +1,13 @@
+data_transform:
+  outputs:
+    dev:
+      account: "{{ env_var('ACCOUNT') }}"
+      database: "{{ env_var('DATABASE') }}"
+      private_key_path: "{{ env_var('PRIVATE_KEY_PATH') }}"
+      role: SYSADMIN
+      schema: "{{ env_var('SCHEMA') }}"
+      threads: 4
+      type: snowflake
+      user: "{{ env_var('USER') }}"
+      warehouse: "{{ env_var('WAREHOUSE') }}"
+  target: dev

@@ -1,0 +1,38 @@
+{
+    "results": [
+        {
+            "parentType": "page",
+            "createdAt": "2021-07-20T15:24:18.456Z",
+            "authorId": "hijklmnopqr",
+            "id": "4444444",
+            "version": {
+                "number": 1,
+                "message": "",
+                "minorEdit": false,
+                "authorId": "hijklmnopqr",
+                "createdAt": "2021-07-20T15:24:18.456Z"
+            },
+            "position": 3456789,
+            "spaceId": "1111111",
+            "title": "Snowflake データロード",
+            "status": "current",
+            "body": {
+                "storage": {
+                    "value": "<h1>Snowflake データロード</h1> <p>このページは、Snowflakeへのデータロード手順を記述します。</p> <ul> <li> <p>データ準備</p> </li> <li> <p>データ転送</p> <ul> <li> <p>ファイルフォーマットの指定</p> </li> <li> <p>外部ステージの利用</p> </li> <li> <p>コマンドの実行</p> </li> </ul> </li> <li> <p>データ検証</p> <ul> <li> <p>ロード成功確認</p> </li> <li> <p>エラーハンドリング</p> </li> <li> <p>データ品質チェック</p> </li> </ul> </li> </ul> <p />",
+                    "representation": "storage"
+                }
+            },
+            "parentId": "3456789",
+            "ownerId": "hijklmnopqr",
+            "lastOwnerId": null,
+            "_links": {
+                "editui": "/pages/resumedraft.action?draftId=4567890",
+                "webui": "/spaces/1111111/pages/4567890",
+                "tinyui": "/x/PIWmAg"
+            }
+        }
+    ],
+    "_links": {
+        "base": "https://api.example.com/wiki"
+    }
+}

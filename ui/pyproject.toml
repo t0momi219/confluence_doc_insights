@@ -1,0 +1,28 @@
+[project]
+name = "ui"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "t0momi219", email = "t.kodama@datumstudio.jp" }
+]
+dependencies = []
+readme = "README.md"
+requires-python = ">= 3.11"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "streamlit>=1.37.1",
+    "snowflake-snowpark-python>=1.21.0",
+    "snowflake-connector-python>=3.12.1",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ui"]

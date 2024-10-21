@@ -1,0 +1,26 @@
+[project]
+name = "transform"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "t0momi219", email = "t.kodama@datumstudio.jp" }
+]
+dependencies = [
+    "dbt-snowflake>=1.8.3",
+]
+readme = "README.md"
+requires-python = ">= 3.11"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/transform"]

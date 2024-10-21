@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: confluence
+    database: "{{ env_var('DATABASE') }}"
+    schema: "{{ env_var('SCHEMA') }}"
+    tables:
+      - name: _dlt_version
+        columns:
+          - name: VERSION
+          - name: ENGINE_VERSION
+          - name: INSERTED_AT
+          - name: SCHEMA_NAME
+          - name: VERSION_HASH
+          - name: SCHEMA

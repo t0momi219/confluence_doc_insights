@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: confluence
+    database: "{{ env_var('DATABASE') }}"
+    schema: "{{ env_var('SCHEMA') }}"
+    tables:
+      - name: _dlt_pipeline_state
+        columns:
+          - name: VERSION
+          - name: ENGINE_VERSION
+          - name: PIPELINE_NAME
+          - name: STATE
+          - name: CREATED_AT
+          - name: VERSION_HASH
+          - name: _DLT_LOAD_ID
+          - name: _DLT_ID
