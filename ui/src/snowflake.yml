@@ -2,7 +2,7 @@ definition_version: 1
 streamlit:
   name: confluence_doc_insights
   stage: confluence_doc_insights_stage
-  query_warehouse: T_KODAMA_WH
+  query_warehouse: CONFLUENCE_DOC_INSIGHTS_WHS
   main_file: ui/welcome.py
   env_file: environment.yml
   pages_dir: ui/pages/
